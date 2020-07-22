@@ -33,18 +33,18 @@ public class AdminController {
         return "productInventory";
     }
     @RequestMapping("/productList/setWishList/{Id}")
-    public String SetWishList(Model model, @PathVariable String Id) throws IOException {
+    public RedirectView SetWishList(Model model, @PathVariable String Id) throws IOException {
         productDao.SetWishList(Id);
-        List<Product> products = productDao.getProductList();
-        model.addAttribute("products", products);
-        return  "productList";
+        RedirectView redirectView = new RedirectView();
+        redirectView.setUrl("/productList");
+        return redirectView;
     }
     @RequestMapping("/productList/delete/{Id}")
-    public String Delete(Model model, @PathVariable String Id) throws IOException {
+    public RedirectView Delete(Model model, @PathVariable String Id) throws IOException {
         productDao.delProduct(Id);
-        List<Product> products = productDao.getProductList();
-        model.addAttribute("products", products);
-        return  "productList";
+        RedirectView redirectView = new RedirectView();
+        redirectView.setUrl("/productList");
+        return redirectView;
     }
     @RequestMapping(value = "/addProduct", method = RequestMethod.GET)
     public ModelAndView addProduct(Model model) {
@@ -53,9 +53,8 @@ public class AdminController {
     }
     @RequestMapping(value = "/addProduct", method = RequestMethod.POST)
     public RedirectView addProduct(@ModelAttribute("product") Product product  ) {
-        System.out.println(product);
-        productDao.addProduct(product);
 
+       productDao.addProduct(product);
 
        // fileService.saveFile(product.getImage());
         RedirectView redirectView = new RedirectView();

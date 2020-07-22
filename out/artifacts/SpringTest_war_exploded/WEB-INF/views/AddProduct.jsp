@@ -18,7 +18,7 @@
 <div class="col-lg-8 col-sm-12">
     <div class="contact-form-right">
 <%--       // enctype="multipart/form-data"--%>
-<form:form method="post"   modelAttribute="product" action="/addProduct" >
+<form:form method="post"   commandName="product" action="/addProduct"  >
     <div class="row">
         <div class="col-md-12">
             <div class="form-group">
@@ -60,30 +60,18 @@
                 <div class="help-block with-errors"></div>
             </div>
         </div>
-        <div class="col-md-12">
-            <div class="form-group">
-                <form:input type="file" class="form-control" path="image" id="image" name="image" required="required" placeholder="Upload image" />
-                <div class="help-block with-errors"></div>
-            </div>
-        </div>
+<%--        <div class="col-md-12">--%>
+<%--            <div class="form-group">--%>
+<%--                <form:input type="file" class="form-control" path="image" id="image" name="image"  placeholder="Upload image" />--%>
+<%--                <div class="help-block with-errors"></div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
         <div class="col-md-12">
             <div class="form-group">
                 <form:input type="decimal" class="form-control" path="price" id="price" name="price"  required="required" value="" placeholder="Price" />
                 <div class="help-block with-errors"></div>
             </div>
         </div>
-<%--        <div class="col-md-12">--%>
-<%--            <div class="col-md-6">--%>
-<%--            <div class="submit-button text-center">--%>
-<%--                <button class="btn hvr-hover"  type="submit">Submit</button>--%>
-<%--            </div>--%>
-<%--            </div>--%>
-<%--            <div class="col-md-6">--%>
-<%--            <div class="submit-button text-center">--%>
-<%--                <button class="btn hvr-hover" id="reset" type="Reset">Reset</button>--%>
-<%--            </div>--%>
-<%--            </div>--%>
-<%--        </div>--%>
         <div class="form-group">
             <div class="row">
                 <div class="width50"><input class="btn btn-success" type="submit"   value="Submit" style="font-weight: bold"></div>
