@@ -11,4 +11,5 @@ public interface ProductDao {
     void addProduct (Product product);
     void delProduct(String id);
     void SetWishList(String id);
+    public List<Product> getProductBySearch(String NameSearch);
 }

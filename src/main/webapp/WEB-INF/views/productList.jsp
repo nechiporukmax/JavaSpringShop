@@ -1,4 +1,5 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>--%>
 
@@ -12,10 +13,10 @@
             <div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left">
                 <div class="product-categori">
                     <div class="search-product">
-                        <form action="#">
-                            <input class="form-control" placeholder="Search here..." type="text">
+<form:form method="post"   action="/productList/Search/" >
+                            <input class="form-control" name="Name" placeholder="Search here..." type="text">
                             <button type="submit"> <i class="fa fa-search"></i> </button>
-                        </form>
+</form:form>
                     </div>
                     <div class="filter-sidebar-left">
                         <div class="title-left">
@@ -166,6 +167,9 @@
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
                                 <div class="row">
+                                    <c:if test="${products.size()==0}">
+                                        <h2>Not Found</h2>
+                                     </c:if>
                                     <c:forEach  var="product" items="${products}">
                                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                             <div class="products-single fix">
@@ -173,17 +177,17 @@
                                                     <div class="type-lb">
                                                         <p class="sale">${product.condition}</p>
                                                     </div>
-                                                    <img src="<c:url value="/resources/images/img-pro-01.jpg"/>" class="img-fluid" alt="Image">
+                                                    <img src="<c:url value="/resources/Uploads/${product.id}.png"/>" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
                                                         <ul>
                                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                                             <c:if test="${product.wishList}">
                                                             <li><a href="/productList/setWishList/${product.id}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="fas fa-heart"></i></a></li>
-                                                            ></c:if>
+                                                            </c:if>
                                                             <c:if test="${product.wishList==false}">
                                                             <li><a href="/productList/setWishList/${product.id}" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                                                ></c:if>
+                                                                </c:if>
 
                                                         </ul>
                                                         <a class="cart" href="#">Add to Cart</a>

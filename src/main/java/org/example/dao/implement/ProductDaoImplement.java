@@ -19,12 +19,20 @@ private SessionFactory sessionFactory;
 
     public List<Product> getProductList() {
        Session session=sessionFactory.getCurrentSession();
-        Query query=session.createQuery("from Product");
+        Query query=session.createQuery("from Product ");
         List<Product>products=query.list();
         session.flush();
         return products;
     }
+public List<Product> getProductBySearch(String NameSearch)
+{
+    Session session=sessionFactory.getCurrentSession();
 
+    Query query=session.createQuery("from Product WHERE  Name  LIKE'%"+NameSearch+"%'");
+    List<Product>products=query.list();
+    session.flush();
+    return products;
+}
     public Product getProductById(String Id) {
 
         Session session = sessionFactory.getCurrentSession();
@@ -50,6 +58,7 @@ private SessionFactory sessionFactory;
     public void delProduct(String id) {
         Session session=sessionFactory.getCurrentSession();
         Query query=session.createQuery("delete Product where Id =" +id);
+
         query.executeUpdate();
 
         session.flush();

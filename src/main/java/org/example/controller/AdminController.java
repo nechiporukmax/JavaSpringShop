@@ -2,24 +2,27 @@ package org.example.controller;
 
 import org.example.dao.ProductDao;
 import org.example.model.Product;
-import org.example.service.FileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
 
 @Controller
 public class AdminController {
+    private Path path;
     @Autowired
     private ProductDao productDao;
-    @Autowired
-    private FileService fileService;
 
     @RequestMapping("/admin")
     public String adminPage(){
@@ -52,11 +55,22 @@ public class AdminController {
         return new ModelAndView("AddProduct", "product", new Product());
     }
     @RequestMapping(value = "/addProduct", method = RequestMethod.POST)
-    public RedirectView addProduct(@ModelAttribute("product") Product product  ) {
-
+    public RedirectView addProduct(@ModelAttribute("product") Product product, HttpServletRequest request) {
        productDao.addProduct(product);
 
-       // fileService.saveFile(product.getImage());
+        MultipartFile productImage = product.getImage();
+        System.out.println("productImage => " + productImage);
+        String rootDirectory = request.getSession().getServletContext().getRealPath("/");
+        path = Paths.get(rootDirectory + "\\WEB-INF\\resources\\Uploads\\"+product.getId()+".png");
+
+        if (productImage != null && !productImage.isEmpty()) {
+            try {
+                productImage.transferTo(new File(path.toString()));
+            } catch (Exception e) {
+                e.printStackTrace();
+                throw new RuntimeException("Product image saving failed", e);
+            }
+        }
         RedirectView redirectView = new RedirectView();
         redirectView.setUrl("/productList");
         return redirectView;

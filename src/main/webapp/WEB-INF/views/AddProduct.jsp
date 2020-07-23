@@ -4,21 +4,10 @@
 <%@include file="templates/header.jsp"%>
 <%@include file="templates/header-slider.jsp"%>
 
-<%--<form  th:action="@{/addProduct}" th:object="${product}" method="post">--%>
-<%--    <p>Id: <input type="text" th:field="*{id}" /></p>--%>
-<%--    <p>Name: <input type="text" th:field="*{Name}" /></p>--%>
-<%--    <p>Category: <input type="text" th:field="*{category}" /></p>--%>
-<%--    <p>Description: <input type="text" th:field="*{description}" /></p>--%>
-<%--    <p>Price: <input type="number" th:field="*{price}" /></p>--%>
-<%--    <p>Condition: <input type="text" th:field="*{condition}" /></p>--%>
-<%--    <p>Status: <input type="text" th:field="*{status}" /></p>--%>
-<%--    <p>Manufacture: <input type="text" th:field="*{manufacture}" /></p>--%>
-<%--    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>--%>
-<%--</form>--%>
 <div class="col-lg-8 col-sm-12">
     <div class="contact-form-right">
-<%--       // enctype="multipart/form-data"--%>
-<form:form method="post"   commandName="product" action="/addProduct"  >
+
+<form:form method="post"   modelAttribute="product" action="/addProduct" enctype="multipart/form-data" >
     <div class="row">
         <div class="col-md-12">
             <div class="form-group">
@@ -60,12 +49,12 @@
                 <div class="help-block with-errors"></div>
             </div>
         </div>
-<%--        <div class="col-md-12">--%>
-<%--            <div class="form-group">--%>
-<%--                <form:input type="file" class="form-control" path="image" id="image" name="image"  placeholder="Upload image" />--%>
-<%--                <div class="help-block with-errors"></div>--%>
-<%--            </div>--%>
-<%--        </div>--%>
+        <div class="col-md-12">
+            <div class="form-group">
+                <form:input type="file" class="form-control" path="image" id="image" name="image"  placeholder="Upload image" />
+                <div class="help-block with-errors"></div>
+            </div>
+        </div>
         <div class="col-md-12">
             <div class="form-group">
                 <form:input type="decimal" class="form-control" path="price" id="price" name="price"  required="required" value="" placeholder="Price" />

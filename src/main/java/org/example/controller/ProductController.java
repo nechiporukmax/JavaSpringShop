@@ -20,6 +20,14 @@ public class ProductController {
         model.addAttribute("products", products);
         return "productList";
     }
+    @RequestMapping(value = "/productList/Search/", method = RequestMethod.POST)
+    public String getProductBySearch(@RequestParam("Name") String Name,Model model)
+    {
+        List<Product> products = productDao.getProductBySearch(Name);
+        model.addAttribute("products", products);
+        return "productList";
+    }
+
         @RequestMapping("/productList/viewProduct/{Id}")
     public String getProduct( Model model, @PathVariable String Id) throws IOException {
             Product product= productDao.getProductById(Id);
