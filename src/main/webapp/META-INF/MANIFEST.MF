@@ -2,4 +2,18 @@ Manifest-Version: 1.0
 Created-By: IntelliJ IDEA
 Built-By: User
 Build-Jdk: 1.8.0_211
+Main-Class: com.mkyong.SpringBootWebApplication
+Class-Path: lib/spring-webmvc-4.1.4.RELEASE.jar lib/spring-beans-4.1.4.R
+ ELEASE.jar lib/spring-context-4.1.4.RELEASE.jar lib/spring-aop-4.1.4.RE
+ LEASE.jar lib/aopalliance-1.0.jar lib/spring-expression-4.1.4.RELEASE.j
+ ar lib/spring-web-4.1.4.RELEASE.jar lib/spring-core-4.1.4.RELEASE.jar l
+ ib/commons-logging-1.2.jar lib/spring-orm-4.1.4.RELEASE.jar lib/spring-
+ jdbc-4.1.4.RELEASE.jar lib/spring-tx-4.1.4.RELEASE.jar lib/jstl-1.2.jar
+  lib/standard-1.1.2.jar lib/hibernate-core-4.0.1.Final.jar lib/commons-
+ collections-3.2.1.jar lib/antlr-2.7.7.jar lib/jboss-transaction-api_1.1
+ _spec-1.0.0.Final.jar lib/dom4j-1.6.1.jar lib/xml-apis-1.0.b2.jar lib/j
+ boss-logging-3.1.0.CR2.jar lib/javassist-3.15.0-GA.jar lib/hibernate-co
+ mmons-annotations-4.0.1.Final.jar lib/hibernate-jpa-2.0-api-1.0.1.Final
+ .jar lib/h2-1.4.190.jar lib/commons-fileupload-1.2.2.jar lib/commons-io
+ -2.4.jar lib/servlet-api-2.5-20081211.jar lib/servlet-api-2.5.jar
 

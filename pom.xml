@@ -7,6 +7,9 @@
     <groupId>org.example</groupId>
     <artifactId>jmstore</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+    <name>Documented Project</name>
+    <url>http://example.com</url>
     <build>
         <plugins>
             <plugin>
@@ -17,9 +20,39 @@
                     <target>7</target>
                 </configuration>
             </plugin>
+			<plugin>
+
+      <!-- Build an executable JAR -->
+
+      <groupId>org.apache.maven.plugins</groupId>
+
+      <artifactId>maven-jar-plugin</artifactId>
+
+      <version>3.1.0</version>
+
+      <configuration>
+
+        <archive>
+
+          <manifest>
+
+            <addClasspath>true</addClasspath>
+
+            <classpathPrefix>lib/</classpathPrefix>
+
+                <mainClass>com.mkyong.SpringBootWebApplication</mainClass>
+
+          </manifest>
+
+        </archive>
+
+      </configuration>
+
+    </plugin>
         </plugins>
     </build>
     <dependencies>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
