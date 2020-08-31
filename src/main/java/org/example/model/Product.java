@@ -5,18 +5,28 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.persistence.*;
 
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String Id;
     private String Name;
-    private String Category;
     private String Description;
     private double Price;
-    private String Condition;
     private String Status;
     private String Manufacture;
+    private double Discount;
+    @ManyToOne (optional=false, cascade=CascadeType.ALL)
+    private Category Category;
+
+    public double getDiscount() {
+        return Discount;
+    }
+
+    public void setDiscount(double discount) {
+        Discount = discount;
+    }
 
     public Boolean getWishList() {
         return WishList;
@@ -46,7 +56,7 @@ public class Product {
         Name = name;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(Category category) {
         Category = category;
     }
 
@@ -58,12 +68,8 @@ public class Product {
         Price = price;
     }
 
-    public void setCondition(String condition) {
-        Condition = condition;
-    }
-
-    public void setStatus(String status) {
-        Status = status;
+    public void setStatus(String Status) {
+        Status = Status;
     }
 
     public void setManufacture(String manufacture) {
@@ -78,7 +84,7 @@ public class Product {
         return Name;
     }
 
-    public String getCategory() {
+    public Category getCategory() {
         return Category;
     }
 
@@ -88,10 +94,6 @@ public class Product {
 
     public double getPrice() {
         return Price;
-    }
-
-    public String getCondition() {
-        return Condition;
     }
 
     public String getStatus() {

@@ -175,7 +175,7 @@
                                             <div class="products-single fix">
                                                 <div class="box-img-hover">
                                                     <div class="type-lb">
-                                                        <p class="sale">${product.condition}</p>
+                                                        <p class="sale">${product.status}</p>
                                                     </div>
                                                     <img src="<c:url value="/resources/Uploads/${product.id}.png"/>" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
@@ -219,7 +219,6 @@
                                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                                         </ul>
-
                                                     </div>
                                                 </div>
                                             </div>
@@ -283,7 +282,6 @@
                                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
                                                             <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                                         </ul>
-
                                                     </div>
                                                 </div>
                                             </div>
