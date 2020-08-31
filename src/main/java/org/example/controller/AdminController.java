@@ -76,15 +76,29 @@ public class AdminController {
         return redirectView;
     }
 
-    @RequestMapping(value = "/editProduct", method = RequestMethod.GET)
-    public ModelAndView editProduct(Model model) {
-        List<Product> products = productDao.getProductList();
-        return new ModelAndView("AddProduct", "product", products.get(0));
+    @RequestMapping(value = "/editProduct/{id}")
+    public String editProduct(@PathVariable("id") String id, Model model) {
+        Product product = productDao.getProductById(id);
+        model.addAttribute(product);
+        return "editProduct";
     }
     @RequestMapping(value = "/editProduct", method = RequestMethod.POST)
-    public RedirectView editProduct(@ModelAttribute("product") Product product  ) {
-        productDao.addProduct(product);
+    public RedirectView editProduct(@ModelAttribute("product") Product product, Model model, HttpServletRequest
+            request ) {
+        MultipartFile productImage = product.getImage();
+        String rootDirectory = request.getSession().getServletContext().getRealPath("/");
+        path = Paths.get(rootDirectory + "\\WEB-INF\\resources\\Uploads\\"+product.getId()+".png");
 
+        if (productImage != null && !productImage.isEmpty()) {
+            try {
+                File file = new File(path.toString());
+                if(file.delete())
+                productImage.transferTo(new File(path.toString()));
+            } catch (Exception e) {
+                throw new RuntimeException("Product image saving failed" , e);
+            }
+        }
+        productDao.editProduct(product);
         RedirectView redirectView = new RedirectView();
         redirectView.setUrl("/productList");
         return redirectView;
