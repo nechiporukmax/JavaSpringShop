@@ -48,19 +48,19 @@ public List<Product> getProductBySearch(String NameSearch)
         session.update(product);
         session.flush();
     }
-    public void addProduct(Product product) {
-        Session session=sessionFactory.openSession();
-        session.beginTransaction();
-        session.save(product);
-        session.getTransaction().commit();
-        session.close();
+    public void addProduct(Product product){
+        Session session = sessionFactory.getCurrentSession();
+        session.saveOrUpdate(product);
+        session.flush();
     }
+
     public void delProduct(String id) {
         Session session = sessionFactory.getCurrentSession();
         Query query = session.createQuery("delete Product where Id =" + id);
         query.executeUpdate();
         session.flush();
     }
+
     public void editProduct (Product product){
         Session session = sessionFactory.getCurrentSession();
         session.saveOrUpdate(product);

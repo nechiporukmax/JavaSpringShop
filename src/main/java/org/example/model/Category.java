@@ -8,7 +8,7 @@ import java.util.List;
 public class Category {
     @javax.persistence.Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String Id;
+    private int Id;
     private String Name;
 
     @OneToMany(cascade=CascadeType.ALL)
@@ -22,11 +22,11 @@ public class Category {
         Name = name;
     }
 
-    public String getId() {
+    public int getId() {
         return Id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         Id = id;
     }
 

@@ -171,7 +171,7 @@
                                             <div class="products-single fix">
                                                 <div class="box-img-hover">
                                                     <div class="type-lb">
-                                                        <p class="sale">${product.condition}</p>
+                                                        <p class="sale">${product.manufacture}</p>
                                                     </div>
 
                                                     <img src="<c:url value="/resources/Uploads/${product.id}.png"/>" class="img-fluid" alt="Image">
