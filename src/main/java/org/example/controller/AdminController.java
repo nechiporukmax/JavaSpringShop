@@ -1,5 +1,4 @@
 package org.example.controller;
-
 import org.example.dao.CategoryDao;
 import org.example.dao.ProductDao;
 import org.example.model.Category;
@@ -79,7 +78,7 @@ public class AdminController {
             }
         }
         RedirectView redirectView = new RedirectView();
-        redirectView.setUrl("/productList");
+        redirectView.setUrl("/admin");
         return redirectView;
     }
 
@@ -109,7 +108,7 @@ public class AdminController {
         product.setCategory( categoryDao.getCategoryById(product.getCategory().getId()));
         productDao.editProduct(product);
         RedirectView redirectView = new RedirectView();
-        redirectView.setUrl("/productList");
+        redirectView.setUrl("/admin");
         return redirectView;
     }
 }

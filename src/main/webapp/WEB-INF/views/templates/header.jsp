@@ -14,11 +14,9 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <!-- Site Icons -->
     <link rel="shortcut icon" href="<c:url value="/resources/images/favicon.ico"/>" type="image/x-icon">
     <link rel="apple-touch-icon" href="<c:url value="/resources/images/apple-touch-icon.png"/>">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.min.css"/>">
     <!-- Site CSS -->
@@ -86,6 +84,7 @@
                 </div>
                 <div class="our-link">
                     <ul>
+                        <li><a href="<c:url value="/admin/" />">Admin</a></li>
                         <li><a href="#">My Account</a></li>
                         <li><a href="#">Our location</a></li>
                         <li><a href="#">Contact Us</a></li>
@@ -125,10 +124,10 @@
                                         <h6 class="title">Top</h6>
                                         <div class="content">
                                             <ul class="menu-col">
-                                                <li><a href="/productList">Jackets</a></li>
-                                                <li><a href="shop.html">Shirts</a></li>
-                                                <li><a href="shop.html">Sweaters & Cardigans</a></li>
-                                                <li><a href="shop.html">T-shirts</a></li>
+                                                <li><a href="/productList/1">Jackets</a></li>
+                                                <li><a href="/productList/2">Shirts</a></li>
+                                                <li><a href="/productList/3">Sweaters & Cardigans</a></li>
+                                                <li><a href="/productList/4">T-shirts</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -137,10 +136,10 @@
                                         <h6 class="title">Bottom</h6>
                                         <div class="content">
                                             <ul class="menu-col">
-                                                <li><a href="shop.html">Swimwear</a></li>
-                                                <li><a href="shop.html">Skirts</a></li>
-                                                <li><a href="shop.html">Jeans</a></li>
-                                                <li><a href="shop.html">Trousers</a></li>
+                                                <li><a href="/productList/5">Swimwear</a></li>
+                                                <li><a href="/productList/6">Skirts</a></li>
+                                                <li><a href="/productList/7">Jeans</a></li>
+                                                <li><a href="/productList/8">Trousers</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -149,10 +148,10 @@
                                         <h6 class="title">Clothing</h6>
                                         <div class="content">
                                             <ul class="menu-col">
-                                                <li><a href="shop.html">Top Wear</a></li>
-                                                <li><a href="shop.html">Party wear</a></li>
-                                                <li><a href="shop.html">Bottom Wear</a></li>
-                                                <li><a href="shop.html">Indian Wear</a></li>
+                                                <li><a href="/productList/9">Top Wear</a></li>
+                                                <li><a href="/productList/10">Party wear</a></li>
+                                                <li><a href="/productList/11">Bottom Wear</a></li>
+                                                <li><a href="/productList/12">Indian Wear</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -160,10 +159,10 @@
                                         <h6 class="title">Accessories</h6>
                                         <div class="content">
                                             <ul class="menu-col">
-                                                <li><a href="shop.html">Bags</a></li>
-                                                <li><a href="shop.html">Sunglasses</a></li>
-                                                <li><a href="shop.html">Fragrances</a></li>
-                                                <li><a href="shop.html">Wallets</a></li>
+                                                <li><a href="/productList/13">Bags</a></li>
+                                                <li><a href="/productList/14">Sunglasses</a></li>
+                                                <li><a href="/productList/15">Fragrances</a></li>
+                                                <li><a href="/productList/16">Wallets</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -233,7 +232,6 @@
     <!-- End Navigation -->
 </header>
 <!-- End Main Top -->
-
 <!-- Start Top Search -->
 <div class="top-search">
     <div class="container">
@@ -244,7 +242,5 @@
         </div>
     </div>
 </div>
-
-
 </body>
 </html>

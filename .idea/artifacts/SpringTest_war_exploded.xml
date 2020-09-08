@@ -16,9 +16,6 @@
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.1.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.1.4.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-context:4.1.4.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.1.4.RELEASE" />
-          <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.1.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.1.4.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-core:4.1.4.RELEASE" />
@@ -42,6 +39,12 @@
           <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.2.2" />
           <element id="library" level="project" name="Maven: commons-io:commons-io:2.4" />
           <element id="library" level="project" name="Maven: org.mortbay.jetty:servlet-api:2.5-20081211" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:4.1.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.1.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:3.1.4.RELEASE" />
+          <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:3.1.4.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:3.1.4.RELEASE" />
         </element>
       </element>
       <element id="directory" name="META-INF">

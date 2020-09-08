@@ -37,4 +37,13 @@ public class CategoryDaoImplement  implements CategoryDao {
         return category;
     }
 
+    @Override
+    public   List<Product> getProductByCategory(int Id) {
+        Session session = sessionFactory.getCurrentSession();
+        Query query=session.createQuery("from Product where CATEGORY_ID ="+Id);
+        List<Product>products=query.list();
+        session.flush();
+        return products;
+    }
+
 }

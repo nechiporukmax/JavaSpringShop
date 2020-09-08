@@ -8,4 +8,5 @@ import java.util.List;
 public interface CategoryDao {
     List<Category> getCategoryList();
     Category getCategoryById(int Id);
+   List<Product> getProductByCategory(int Id);
 }

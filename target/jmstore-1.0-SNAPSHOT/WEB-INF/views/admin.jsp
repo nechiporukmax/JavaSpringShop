@@ -4,13 +4,20 @@
 <div class="container">
     <div class="row">
         <div class="col mt-4 mb-4">
-            <h1>Administrator page</h1>
+            <c:if test="${pageContext.request.userPrincipal.name != null}">
+                Check product list	                <h2>
+                                 Welcome: ${pageContext.request.userPrincipal.name} |
+                <a href="<c:url value="/j_spring_security_logout" />">Logout</a>
+            </h2>
+            </c:if>
             <p>
                 Check product list
             </p>
-            <ul>
-                <li>            <a href="<c:url value="/admin/productInventory/" />">Show Product List</a>
 
+
+            <ul>
+                <li>
+                    <a href="<c:url value="/admin/productInventory/" />">Show Product List</a>
                 </li>
                 <li>
                     <a href="<spring:url value="/addProduct" />" >Add Product</a>

@@ -3,7 +3,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="templates/header.jsp"%>
 <%@include file="templates/header-slider.jsp"%>
-
 <div class="col-lg-8 col-sm-12">
     <div class="contact-form-right">
         <form:form method="post"   modelAttribute="product" action="/editProduct" enctype="multipart/form-data" >
