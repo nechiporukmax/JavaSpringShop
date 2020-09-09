@@ -14,8 +14,8 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 @Repository
 @Transactional
-
 public class CategoryDaoImplement  implements CategoryDao {
+
     @Autowired
     private SessionFactory sessionFactory;
 
@@ -26,7 +26,6 @@ public class CategoryDaoImplement  implements CategoryDao {
         List<Category>categories=query.list();
         session.flush();
         return categories;
-
     }
 
     @Override
@@ -36,7 +35,6 @@ public class CategoryDaoImplement  implements CategoryDao {
         session.flush();
         return category;
     }
-
     @Override
     public   List<Product> getProductByCategory(int Id) {
         Session session = sessionFactory.getCurrentSession();
@@ -44,6 +42,25 @@ public class CategoryDaoImplement  implements CategoryDao {
         List<Product>products=query.list();
         session.flush();
         return products;
+    }
+
+    @Override
+    public void addCategory(Category category) {
+        Session session = sessionFactory.getCurrentSession();
+        session.save(category);
+        session.flush();
+    }
+
+    @Override
+    public Category GetCategoryByName(String name) {
+        Session session = sessionFactory.getCurrentSession();
+        Query query=session.createQuery("from Category where NAME= :name");
+        query.setParameter("name", name);
+        Category category=null;
+        if(query.list().size()>0)
+              category = (Category)query.list().get(0);
+        session.flush();
+        return category;
     }
 
 }

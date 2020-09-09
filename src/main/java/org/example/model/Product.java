@@ -7,7 +7,6 @@ import javax.persistence.*;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Product {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String Id;

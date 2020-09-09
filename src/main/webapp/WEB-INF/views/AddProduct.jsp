@@ -10,44 +10,56 @@
     <div class="row">
         <div class="col-md-12">
             <div class="form-group">
-                <form:input type="text" class="form-control" path="name" id="name" name="name" placeholder="Name"  required="required" />
+                <label for="name">Name:</label>
+                <form:input type="text" class="form-control" path="name" id="name" name="name"   required="required" />
                 <div class="help-block with-errors"></div>
             </div>
         </div>
         <div class="col-md-12">
             <div class="form-group">
-                <form:textarea type="text" class="form-control" path="description" id="description" name="description" required="required" placeholder="Description" />
+                <label for="description">Description:</label>
+                <form:textarea type="text" class="form-control" path="description" id="description" name="description" required="required" />
                 <div class="help-block with-errors"></div>
             </div>
         </div>
 
         <div class="col-md-12">
             <div class="form-group">
-                <form:input type="text" class="form-control" path="manufacture" id="manufacture" name="manufacture" required="required" placeholder="Manufacture" />
+                <label for="manufacture">Manufacture:</label>
+
+                <form:input type="text" class="form-control" path="manufacture" id="manufacture" name="manufacture" required="required"  />
                 <div class="help-block with-errors"></div>
             </div>
         </div>
         <div class="col-md-12">
             <div class="form-group">
-                <form:input type="file" class="form-control" path="image" id="image" name="image"  placeholder="Upload image" />
+                <label for="image">Image:</label>
+
+                <form:input type="file" class="form-control" path="image" id="image" name="image"   />
                 <div class="help-block with-errors"></div>
             </div>
         </div>
         <div class="col-md-12">
             <div class="form-group">
-        <form:select path="category.id" items="${categories}" itemValue="id" itemLabel="name" />
+                <label >Category:</label>
+
+                <form:select path="category.id" items="${categories}" itemValue="id" itemLabel="name" />
             <div class="help-block with-errors"></div>
         </div>
     </div>
         <div class="col-md-12">
             <div class="form-group">
-                <form:input type="decimal" class="form-control" path="price" id="price" name="price"  required="required" value="" placeholder="Price" />
+                <label for="price">Price:</label>
+
+                <form:input type="decimal" class="form-control" path="price" id="price" name="price"  required="required" value=""  />
                 <div class="help-block with-errors"></div>
             </div>
         </div>
         <div class="col-md-12">
             <div class="form-group">
-                <form:input type="decimal" class="form-control" path="discount" id="discount" name="discount"  required="required" value="" placeholder="Discount" />
+                <label for="discount">Discount:</label>
+
+                <form:input type="decimal" class="form-control" path="discount" id="discount" name="discount"  required="required" value=""  />
                 <div class="help-block with-errors"></div>
             </div>
         </div>

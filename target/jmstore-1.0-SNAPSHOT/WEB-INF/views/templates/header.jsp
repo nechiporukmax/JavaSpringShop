@@ -14,11 +14,9 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <!-- Site Icons -->
     <link rel="shortcut icon" href="<c:url value="/resources/images/favicon.ico"/>" type="image/x-icon">
     <link rel="apple-touch-icon" href="<c:url value="/resources/images/apple-touch-icon.png"/>">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.min.css"/>">
     <!-- Site CSS -->
@@ -234,7 +232,6 @@
     <!-- End Navigation -->
 </header>
 <!-- End Main Top -->
-
 <!-- Start Top Search -->
 <div class="top-search">
     <div class="container">
@@ -245,7 +242,5 @@
         </div>
     </div>
 </div>
-
-
 </body>
 </html>
