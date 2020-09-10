@@ -48,6 +48,36 @@ public List<Product> getProductBySearch(String NameSearch)
         session.update(product);
         session.flush();
     }
+
+
+    public void SetCart(String id) {
+        Product product=getProductById(id);
+        product.setCart(!product.getCart());
+        Session session = sessionFactory.getCurrentSession();
+        session.update(product);
+        session.flush();
+    }
+
+
+    public List<Product> GetCart() {
+        Session session=sessionFactory.getCurrentSession();
+
+        Query query=session.createQuery("from Product WHERE Cart=TRUE");
+        List<Product>products=query.list();
+        session.flush();
+        return products;
+    }
+
+
+    public List<Product> GetWishList() {
+        Session session=sessionFactory.getCurrentSession();
+
+        Query query=session.createQuery("from Product WHERE WISHLIST=TRUE");
+        List<Product>products=query.list();
+        session.flush();
+        return products;
+    }
+
     public void addProduct(Product product){
         Session session = sessionFactory.getCurrentSession();
         session.saveOrUpdate(product);

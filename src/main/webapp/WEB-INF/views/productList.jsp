@@ -190,7 +190,7 @@
                                                                 </c:if>
 
                                                         </ul>
-                                                        <a class="cart" href="#">Add to Cart</a>
+                                                        <a class="cart" href="/productList/setCart/${product.id}">Add to Cart</a>
                                                     </div>
                                                 </div>
                                                 <div class="why-text">

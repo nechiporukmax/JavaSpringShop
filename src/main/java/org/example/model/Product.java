@@ -15,7 +15,14 @@ public class Product {
     private double Price;
     private String Manufacture;
     private double Discount;
+    private Boolean Cart=false;
+    public Boolean getCart() {
+        return Cart;
+    }
 
+    public void setCart(Boolean cart) {
+        Cart = cart;
+    }
     @ManyToOne (optional=false, cascade=CascadeType.ALL)
     private Category Category;
 

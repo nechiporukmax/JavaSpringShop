@@ -24,7 +24,12 @@ public class ProductController {
         model.addAttribute("products", products);
         return "productList";
     }
-
+    @RequestMapping("/productList")
+    public String getAllProducts(Model model){
+        List<Product> products = productDao.getProductList();
+        model.addAttribute("products", products);
+        return "productList";
+    }
     @RequestMapping(value = "/productList/Search/", method = RequestMethod.POST)
     public String getProductBySearch(@RequestParam("Name") String Name,Model model)
     {
@@ -32,7 +37,24 @@ public class ProductController {
         model.addAttribute("products", products);
         return "productList";
     }
-
+    @RequestMapping("/wishList")
+    public String getWishList( Model model) throws IOException {
+        List<Product> products= productDao.GetWishList();
+        model.addAttribute("products", products);
+        return "wishList";
+    }
+    @RequestMapping("/cart")
+    public String getCart( Model model) throws IOException {
+        List<Product> products= productDao.GetCart();
+        float totalPrice=0;
+        for(int i=0;i<products.size();i++)
+        {
+            totalPrice+=products.get(i).getPrice();
+        }
+        model.addAttribute("products", products);
+        model.addAttribute("totalPrice", totalPrice);
+        return "cart";
+    }
         @RequestMapping("/productList/viewProduct/{Id}")
     public String getProduct( Model model, @PathVariable String Id) throws IOException {
             Product product= productDao.getProductById(Id);

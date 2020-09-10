@@ -175,10 +175,10 @@
                     <li class="dropdown">
                         <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
                         <ul class="dropdown-menu">
-                            <li><a href="cart.html">Cart</a></li>
+                            <li><a href="/cart">Cart</a></li>
                             <li><a href="checkout.html">Checkout</a></li>
                             <li><a href="my-account.html">My Account</a></li>
-                            <li><a href="wishlist.html">Wishlist</a></li>
+                            <li><a href="/wishList">Wishlist</a></li>
                             <li><a href="shop-detail.html">Shop Detail</a></li>
                         </ul>
                     </li>

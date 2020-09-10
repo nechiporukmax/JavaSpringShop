@@ -43,7 +43,13 @@ public class AdminController {
         redirectView.setUrl("/productList");
         return redirectView;
     }
-
+    @RequestMapping("/productList/setCart/{Id}")
+    public RedirectView SetCart(Model model, @PathVariable String Id) throws IOException {
+        productDao.SetCart(Id);
+        RedirectView redirectView = new RedirectView();
+        redirectView.setUrl("/productList");
+        return redirectView;
+    }
     @RequestMapping("/productList/delete/{Id}")
     public RedirectView Delete(Model model, @PathVariable String Id) throws IOException {
         productDao.delProduct(Id);
