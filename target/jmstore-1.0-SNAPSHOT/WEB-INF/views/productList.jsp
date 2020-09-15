@@ -194,8 +194,18 @@
                                                     </div>
                                                 </div>
                                                 <div class="why-text">
-                                                    <h4><a href="<spring:url value="/productList/viewProduct/${product.id}"/>">  ${product.description}</a> </h4>
-                                                    <h5> $${product.price}</h5>
+                                                    <h4><a href="<spring:url value="/productList/viewProduct/${product.id}"/>">  ${product.name}</a> </h4>
+
+                                                    <c:if test="${product.price!=product.discount&&product.discount!=0}">
+                                                        <h5>  $${product.discount}    <del> $${product.price} </del></h5>
+
+                                                    </c:if>
+
+
+                                                    <c:if test="${product.price==product.discount||product.discount==0}">
+                                                        <h5>  $${product.price}</h5>
+
+                                                    </c:if>
 
                                                 </div>
                                             </div>

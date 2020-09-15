@@ -5,10 +5,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Site Metas -->
     <title>ThewayShop - Ecommerce Bootstrap 4 HTML Template</title>
     <meta name="keywords" content="">
@@ -25,16 +23,12 @@
     <link rel="stylesheet" href="<c:url value="/resources/css/responsive.css"/>">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<c:url value="/resources/css/custom.css"/>">
-
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
-
 <body>
-
 <!-- Start Main Top -->
 <div class="main-top">
     <div class="container-fluid">
@@ -176,10 +170,8 @@
                         <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">SHOP</a>
                         <ul class="dropdown-menu">
                             <li><a href="/cart">Cart</a></li>
-                            <li><a href="checkout.html">Checkout</a></li>
-                            <li><a href="my-account.html">My Account</a></li>
+
                             <li><a href="/wishList">Wishlist</a></li>
-                            <li><a href="shop-detail.html">Shop Detail</a></li>
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="service">Our Service</a></li>

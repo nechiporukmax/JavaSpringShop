@@ -190,20 +190,23 @@
                                                             </c:if>
 
                                                         </ul>
-                                                        <a class="cart" href="#">Add to Cart</a>
+                                                        <a class="cart" href="/productList/setCart/${product.id}">Delete</a>
                                                     </div>
                                                 </div>
                                                 <div class="why-text">
-                                                    <h4><a href="<spring:url value="/productList/viewProduct/${product.id}"/>">  ${product.description}</a> </h4>
+                                                    <h4><a href="<spring:url value="/productList/viewProduct/${product.id}"/>">  ${product.name}</a> </h4>
                                                     <h5> $${product.price}</h5>
 
                                                 </div>
                                             </div>
                                         </div>
                                     </c:forEach>
-                                    <h2>
-                                        Total price:${totalPrice}
-                                    </h2>
+                                    <c:if test="${products.size()!=0}">
+                                        <h2>
+
+                                            Total price:${totalPrice}
+                                        </h2>                                    </c:if>
+
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane fade" id="list-view">
@@ -234,7 +237,7 @@
                                                 <p>Integer tincidunt aliquet nibh vitae dictum. In turpis sapien, imperdiet quis magna nec, iaculis ultrices ante. Integer vitae suscipit nisi. Morbi dignissim risus sit amet orci porta, eget aliquam purus
                                                     sollicitudin. Cras eu metus felis. Sed arcu arcu, sagittis in blandit eu, imperdiet sit amet eros. Donec accumsan nisi purus, quis euismod ex volutpat in. Vestibulum eleifend eros ac lobortis aliquet.
                                                     Suspendisse at ipsum vel lacus vehicula blandit et sollicitudin quam. Praesent vulputate semper libero pulvinar consequat. Etiam ut placerat lectus.</p>
-                                                <a class="btn hvr-hover" href="#">Add to Cart</a>
+                                                <a class="cart" href="/productList/setCart/${product.id}">Delete</a>
                                             </div>
                                         </div>
                                     </div>
@@ -266,7 +269,7 @@
                                                 <p>Integer tincidunt aliquet nibh vitae dictum. In turpis sapien, imperdiet quis magna nec, iaculis ultrices ante. Integer vitae suscipit nisi. Morbi dignissim risus sit amet orci porta, eget aliquam purus
                                                     sollicitudin. Cras eu metus felis. Sed arcu arcu, sagittis in blandit eu, imperdiet sit amet eros. Donec accumsan nisi purus, quis euismod ex volutpat in. Vestibulum eleifend eros ac lobortis aliquet.
                                                     Suspendisse at ipsum vel lacus vehicula blandit et sollicitudin quam. Praesent vulputate semper libero pulvinar consequat. Etiam ut placerat lectus.</p>
-                                                <a class="btn hvr-hover" href="#">Add to Cart</a>
+                                                <a class="cart" href="/productList/setCart/${product.id}">Delete</a>
                                             </div>
                                         </div>
                                     </div>

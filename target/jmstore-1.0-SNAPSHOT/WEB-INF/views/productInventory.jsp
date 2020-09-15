@@ -187,7 +187,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="why-text">
-                                                    <h4><a href="<spring:url value="/productList/viewProduct/${product.id}"/>">  ${product.description}</a> </h4>
+                                                    <h4><a href="<spring:url value="/productList/viewProduct/${product.id}"/>">  ${product.name}</a> </h4>
                                                     <h5> $${product.price}</h5>
                                                     <button
                                                             type="button"
